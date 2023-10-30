@@ -1,0 +1,11 @@
+<h1>Editing room</h1>
+<turbo-frame id="room">
+  <%= render "form", room: @room %>
+  <br>
+</turbo-frame>
+<div>
+  <%= link_to "Show this room", @room %> |
+  <%= link_to "Back", rooms_path, "data-turbo-frame": "_top" %>
+</div>
+<turbo-frame id="new_message" src="<%= @room.id %>/messages/new" target="_top">
+</turbo-frame>
